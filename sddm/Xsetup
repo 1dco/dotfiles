@@ -1,0 +1,11 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+
+#xrandr --output HDMI-A-1 --mode 4816x2016 --pos 0x0 --rotate normal --output DP-1 --mode 3840x2160 --pos 4816x0 --rotate normal
+#xrandr --output HDMI-A-1 --primary --auto --output DP-1 --right-of HDMI-A-1 --auto
+#xrandr --output DP-1 --mode 3840x2160 --pos 0x0 --rotate normal --output HDMI-A-1 --mode 3440x1440 --pos -3840x0 --rotate normal
+
+#/usr/share/sddm/scripts/Xsetup
+## for the 2 Monitor, it seems like the sddm is run on top of X11, in this case itś HDMI-0 and DP-0 instead of HDMI-A-X and DP-X, the configuration below seems to solve the issue
+xrandr --output HDMI-0 --mode 3440x1440 --left-of DP-0 --auto --noprimary
+xrandr --output DP-0 --primary --mode 3840x2160 --auto
