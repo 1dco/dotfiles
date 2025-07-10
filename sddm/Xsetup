@@ -7,5 +7,7 @@
 
 #/usr/share/sddm/scripts/Xsetup
 ## for the 2 Monitor, it seems like the sddm is run on top of X11, in this case itś HDMI-0 and DP-0 instead of HDMI-A-X and DP-X, the configuration below seems to solve the issue
+
+#only valid for sddm with x11, if use wayland this won't have issue
 xrandr --output HDMI-0 --mode 3440x1440 --left-of DP-0 --auto --noprimary
 xrandr --output DP-0 --primary --mode 3840x2160 --auto
