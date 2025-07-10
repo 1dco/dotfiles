@@ -25,13 +25,20 @@ local target = wezterm.target_triple
 
 if target:find("windows") then
   -- Windows: Launch WSL with your desired options
+  config.font_size = 13
   config.default_prog = {
     'C:\\WINDOWS\\system32\\wsl.exe',
     '--distribution',
     'archLinux',
     '--cd',
-    '~'}
+    '~'
+  }
+elseif target:find("apple") then
+  config.font_size = 16
+elseif target:find("linux") then
+  config.font_size = 14
 end
+
 config.scrollback_lines = 10000
 config.enable_scroll_bar = true
 config.show_tab_index_in_tab_bar = true
