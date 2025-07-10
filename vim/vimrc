@@ -1,0 +1,7 @@
+source $VIMRUNTIME/defaults.vim
+set mouse-=a
+set notermguicolors
+set mouse=
+set tabstop=2
+set shiftwidth=2
+set expandtab
