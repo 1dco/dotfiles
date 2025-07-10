@@ -37,6 +37,7 @@ elseif target:find("apple") then
   config.font_size = 16
 elseif target:find("linux") then
   config.font_size = 14
+	config.enable_wayland = false
 end
 
 config.scrollback_lines = 10000
