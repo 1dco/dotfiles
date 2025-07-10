@@ -58,14 +58,14 @@ wezterm.on(
     local title = string.format("%d: %s", tab_index, tab_title(tab))
     if tab.is_active then
       return {
-        { Background = { Color = 'navy' } },
+        { Background = { Color = 'fuchsia' } },
         { Text = ' ' .. title .. ' ' },
       }
     end
     if tab.is_last_active then
       -- Green color and append '*' to previously active tab.
       return {
-        { Background = { Color = 'green' } },
+        { Background = { Color = 'purple' } },
         { Text = ' ' .. title .. '*' },
       }
     end
