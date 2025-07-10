@@ -3,6 +3,7 @@ local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+local act = wezterm.action
 -- This is where you actually apply your config choices.
 
 -- For example, changing the initial geometry for new windows:
@@ -107,6 +108,8 @@ config.keys = {
     mods = 'CTRL|SHIFT',
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
+  { key = 'PageUp', mods = 'CTRL|SHIFT', action = act.ScrollByPage(-1) },
+  { key = 'PageDown', mods = 'CTRL|SHIFT', action = act.ScrollByPage(1) },
 }
 -- Finally, return the configuration to wezterm:
 return config
