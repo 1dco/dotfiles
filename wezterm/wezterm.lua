@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -13,12 +13,11 @@ config.initial_rows = 28
 -- or, changing the font size and color scheme.
 config.font_size = 12
 -- config.color_scheme = 'Tartan'
-config.color_scheme = 'Wez'
+config.color_scheme = "Wez"
 -- config.color_scheme = 'Tango'
-config.window_background_opacity = 0.85  -- 0.0 is fully transparent, 1.0 is fully opaque
-config.text_background_opacity = 0.85  -- 0.0 is fully transparent, 1.0 is fully opaque
-config.font = wezterm.font 'CaskaydiaCove Nerd Font'
-
+config.window_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
+config.text_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
+config.font = wezterm.font("CaskaydiaCove Nerd Font")
 
 -- Detect the OS using wezterm.target_triple
 local target = wezterm.target_triple
@@ -27,17 +26,17 @@ if target:find("windows") then
   -- Windows: Launch WSL with your desired options
   config.font_size = 13
   config.default_prog = {
-    'C:\\WINDOWS\\system32\\wsl.exe',
-    '--distribution',
-    'archLinux',
-    '--cd',
-    '~'
+    "C:\\WINDOWS\\system32\\wsl.exe",
+    "--distribution",
+    "archLinux",
+    "--cd",
+    "~",
   }
 elseif target:find("apple") then
   config.font_size = 16
 elseif target:find("linux") then
   config.font_size = 14
-	config.enable_wayland = false
+  config.enable_wayland = false
 end
 
 config.scrollback_lines = 10000
@@ -59,76 +58,78 @@ function tab_title(tab_info)
   return tab_info.active_pane.title
 end
 
-wezterm.on(
-  'format-tab-title',
-  function(tab, tabs, panes, config, hover, max_width)
-    local tab_index = tab.tab_index + 1
-    local title = string.format("%d: %s", tab_index, tab_title(tab))
-    if tab.is_active then
-      return {
-        { Background = { Color = 'fuchsia' } },
-        { Text = ' ' .. title .. ' ' },
-      }
-    end
-    if tab.is_last_active then
-      -- Green color and append '*' to previously active tab.
-      return {
-        { Background = { Color = 'purple' } },
-        { Text = ' ' .. title .. '*' },
-      }
-    end
-    return title
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local tab_index = tab.tab_index + 1
+  local title = string.format("%d: %s", tab_index, tab_title(tab))
+  if tab.is_active then
+    return {
+      { Background = { Color = "fuchsia" } },
+      { Text = " " .. title .. " " },
+    }
   end
-)
+  if tab.is_last_active then
+    -- Green color and append '*' to previously active tab.
+    return {
+      { Background = { Color = "purple" } },
+      { Text = " " .. title .. "*" },
+    }
+  end
+  return title
+end)
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
 -- enable kitty image support
 
-config.enable_kitty_graphics=true
+config.enable_kitty_graphics = true
 
 config.use_dead_keys = true
-config.leader = { key = 'a', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "CTRL|SHIFT", timeout_milliseconds = 1000 }
 config.keys = {
   {
-    key = '!',
-    mods = 'LEADER | SHIFT',
+    key = "!",
+    mods = "LEADER | SHIFT",
     action = wezterm.action_callback(function(win, pane)
       local tab, window = pane:move_to_new_window()
     end),
   },
   {
-    key = 'w',
-    mods = 'CTRL|SHIFT',
-    action = wezterm.action.CloseCurrentPane { confirm = true },
+    key = "w",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.CloseCurrentPane({ confirm = true }),
   },
-  { key = 'PageUp', mods = 'CTRL|SHIFT', action = act.ScrollByPage(-1) },
-  { key = 'PageDown', mods = 'CTRL|SHIFT', action = act.ScrollByPage(1) },
+  { key = "PageUp", mods = "CTRL|SHIFT", action = act.ScrollByPage(-1) },
+  { key = "PageDown", mods = "CTRL|SHIFT", action = act.ScrollByPage(1) },
+  {
+    key = '$',
+    mods = 'CTRL|ALT|SHIFT',
+    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
 }
 
 -- nvim configuration taken from https://github.com/folke/zen-mode.nvim
 
-wezterm.on('user-var-changed', function(window, pane, name, value)
-    local overrides = window:get_config_overrides() or {}
-    if name == "ZEN_MODE" then
-        local incremental = value:find("+")
-        local number_value = tonumber(value)
-        if incremental ~= nil then
-            while (number_value > 0) do
-                window:perform_action(wezterm.action.IncreaseFontSize, pane)
-                number_value = number_value - 1
-            end
-            overrides.enable_tab_bar = false
-        elseif number_value < 0 then
-            window:perform_action(wezterm.action.ResetFontSize, pane)
-            overrides.font_size = nil
-            overrides.enable_tab_bar = true
-        else
-            overrides.font_size = number_value
-            overrides.enable_tab_bar = false
-        end
+wezterm.on("user-var-changed", function(window, pane, name, value)
+  local overrides = window:get_config_overrides() or {}
+  if name == "ZEN_MODE" then
+    local incremental = value:find("+")
+    local number_value = tonumber(value)
+    if incremental ~= nil then
+      while number_value > 0 do
+        window:perform_action(wezterm.action.IncreaseFontSize, pane)
+        number_value = number_value - 1
+      end
+      overrides.enable_tab_bar = false
+    elseif number_value < 0 then
+      window:perform_action(wezterm.action.ResetFontSize, pane)
+      overrides.font_size = nil
+      overrides.enable_tab_bar = true
+    else
+      overrides.font_size = number_value
+      overrides.enable_tab_bar = false
     end
-    window:set_config_overrides(overrides)
+  end
+  window:set_config_overrides(overrides)
 end)
 
 -- Finally, return the configuration to wezterm:
