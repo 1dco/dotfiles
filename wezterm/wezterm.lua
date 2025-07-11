@@ -88,7 +88,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.enable_kitty_graphics=true
 
 config.use_dead_keys = true
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'a', mods = 'CTRL|SHIFT', timeout_milliseconds = 1000 }
 config.keys = {
   {
     key = '!',
