@@ -1,11 +1,13 @@
-# Thanks to
+# Readme
+
+## Thanks to
 
 - [@josean-dev] for the most of the tools recommendation [@joseandev](https://github.com/josean-dev)
   - https://www.josean.com/posts/7-amazing-cli-tools
 - [@woioeow] for the hyprland shortcut and configuration and wallpaper [@woioeow](https://github.com/woioeow)
   - https://github.com/woioeow/hyprland-dotfiles/
 
-# Requirement
+## Requirement
 
 - kitty / wezterm (linux hyprland/plasma work best with kitty, wezterm for windows, mac, linux plasma with wayland disabled, cosmic work out of the box)
 - zsh
@@ -31,7 +33,7 @@
 - hyprpaper, hypridle (hyprland only)
 - fd
 
-# files
+## files
 
 - windows : C:/Users/Username/.config/wezterm
 - Linux : ~/.config/
@@ -60,7 +62,6 @@ Leader set to `Space`
 Set Shortcut for moving inside nvim-tree with Ctrl-j and Ctrl-k to switch between open files
 - vim.keymap.set("n", "<C-j>", ":bprev<CR>", { noremap = true, silent = true })
 - vim.keymap.set("n", "<C-k>", ":bnext<CR>", { noremap = true, silent = true })
-
 
 Standard Shortcut
 
