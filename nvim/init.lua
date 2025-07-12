@@ -1,6 +1,2 @@
-vim.opt.termguicolors = false
-vim.opt.mouse = ""
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
--- vim.cmd('colorscheme unokai')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
