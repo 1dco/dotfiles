@@ -19,7 +19,6 @@ config.window_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is full
 config.text_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
 config.font = wezterm.font("CaskaydiaCove Nerd Font")
 config.use_fancy_tab_bar = false
-
 -- Detect the OS using wezterm.target_triple
 local target = wezterm.target_triple
 
@@ -64,14 +63,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local title = string.format("%d: %s", tab_index, tab_title(tab))
   if tab.is_active then
     return {
-      { Background = { Color = "fuchsia" } },
+      { Background = { Color = "#2b2042" } },
+      { Foreground = { Color = "#c0c0c0" } },
       { Text = " " .. title .. " " },
     }
-  end
-  if tab.is_last_active then
+  elseif tab.is_last_active then
     -- Green color and append '*' to previously active tab.
     return {
-      { Background = { Color = "purple" } },
+      { Background = { Color = "#1b1032" } },
+      { Foreground = { Color = "#808080" } },
       { Text = " " .. title .. "*" },
     }
   end
@@ -102,9 +102,9 @@ config.keys = {
   { key = "PageUp", mods = "CTRL|SHIFT", action = act.ScrollByPage(-1) },
   { key = "PageDown", mods = "CTRL|SHIFT", action = act.ScrollByPage(1) },
   {
-    key = '$',
-    mods = 'CTRL|ALT|SHIFT',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    key = "$",
+    mods = "CTRL|ALT|SHIFT",
+    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
 }
 
