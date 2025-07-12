@@ -9,6 +9,7 @@ vim.cmd.colorscheme("slate")
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-j>", ":bprev<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", ":bnext<CR>", { noremap = true, silent = true })
+vim.g.autoformat = false
 
 -- Make background transparent
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -32,8 +33,8 @@ vim.cmd([[
 --  end,
 --})
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    require("nvim-tree.api").tree.open()
-  end,
-})
+--vim.api.nvim_create_autocmd("VimEnter", {
+--  callback = function()
+--    require("nvim-tree.api").tree.open()
+--  end,
+--})
