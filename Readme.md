@@ -29,6 +29,7 @@
 - mako
 - sddm (linux only)
 - hyprpaper, hypridle (hyprland only)
+- fd
 
 # files
 
@@ -42,7 +43,20 @@ MacOS : ~/.config/
 - `HDMI-A-2` and `DP-4`, sometimes it changed  to `HDMI-A-1`, `DP-1`
 
 ## Non Standard Shorcut in Wezterm
+
 - Ctrl + Alt + Shift + 5 => Split Vertical (kitty & wezterm) => due to deadkeys keyboard
 - Ctrl + Alt + Shift + 4 => Split Horizontal (kitty & wezterm) => due to deadkeys keyboard
 - Ctrl + Shift + PageUp/PageDown => Scroll Up & Down
 - Ctrl + Shift + w => Close Pane
+
+## Shortcut in neovim
+
+Leader set to `Space`
+- vim.g.mapleader = " " ( activate neo-tree, Leader + e)
+- Ctrl-w h — Move to the pane on the left (often Neo-tree)
+- Ctrl-w l — Move to the pane on the right
+- Ctrl-w j — Move down
+- Ctrl-w k — Move up
+- Ctrl-w w — Cycle through all open panes (splits)
+- Ctrl-w p — Switch to the previous pane
+
