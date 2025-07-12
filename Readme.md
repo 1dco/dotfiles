@@ -1,10 +1,9 @@
 # Thanks to
 
 - [@josean-dev] for the most of the tools recommendation [@joseandev](https://github.com/josean-dev)
+  - https://www.josean.com/posts/7-amazing-cli-tools
 - [@woioeow] for the hyprland shortcut and configuration and wallpaper [@woioeow](https://github.com/woioeow)
-
-this is mainly taken from https://github.com/woioeow/hyprland-dotfiles/
-https://www.josean.com/posts/7-amazing-cli-tools
+  - https://github.com/woioeow/hyprland-dotfiles/
 
 # Requirement
 
