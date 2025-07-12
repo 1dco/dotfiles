@@ -64,6 +64,7 @@ Set Shortcut for moving inside nvim-tree with Ctrl-j and Ctrl-k to switch betwee
 
 Standard Shortcut
 
+- Ctrl+^ or Ctrl+6 is to cycle between files for :bnext :bprev
 - Ctrl-w h — Move to the pane on the left (often Neo-tree)
 - Ctrl-w l — Move to the pane on the right
 - Ctrl-w j — Move down
