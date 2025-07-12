@@ -1,10 +1,10 @@
 # A catppuccin RC for waybar. In beta, specs may change.
 app_name: waybar
-binary_name: waybar 
+binary_name: waybar
 installation:
   location:
-    macos: %appdata%/waybar/
-    linux: %appdata%/waybar/
+    macos: '%appdata%/waybar/'
+    linux: '%appdata%/waybar/'
   flavours:
     all:
       default:
