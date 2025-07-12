@@ -3,8 +3,8 @@ require("config.lazy")
 
 -- Set the colorscheme
 -- vim.cmd.colorscheme("unokai")
-vim.cmd.colorscheme("torte")
--- vim.cmd.colorscheme("slate")
+-- vim.cmd.colorscheme("torte")
+vim.cmd.colorscheme("slate")
 
 -- Make background transparent
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
