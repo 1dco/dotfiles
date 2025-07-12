@@ -51,8 +51,19 @@ MacOS : ~/.config/
 
 ## Shortcut in neovim
 
+
+Non Standard Shortcut
+
 Leader set to `Space`
 - vim.g.mapleader = " " ( activate neo-tree, Leader + e)
+
+Set Shortcut for moving inside nvim-tree with Ctrl-j and Ctrl-k to switch between open files
+- vim.keymap.set("n", "<C-j>", ":bprev<CR>", { noremap = true, silent = true })
+- vim.keymap.set("n", "<C-k>", ":bnext<CR>", { noremap = true, silent = true })
+
+
+Standard Shortcut
+
 - Ctrl-w h — Move to the pane on the left (often Neo-tree)
 - Ctrl-w l — Move to the pane on the right
 - Ctrl-w j — Move down

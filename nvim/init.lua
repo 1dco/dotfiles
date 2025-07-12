@@ -6,6 +6,10 @@ require("config.lazy")
 -- vim.cmd.colorscheme("torte")
 vim.cmd.colorscheme("slate")
 
+vim.g.mapleader = " "
+vim.keymap.set("n", "<C-j>", ":bprev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", ":bnext<CR>", { noremap = true, silent = true })
+
 -- Make background transparent
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -21,3 +25,15 @@ vim.cmd([[
     autocmd ColorScheme * highlight Pmenu       ctermbg=none guibg=none
   augroup END
 ]])
+
+--vim.api.nvim_create_autocmd("VimEnter", {
+--  callback = function()
+--    vim.cmd("Neotree show")
+--  end,
+--})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require("nvim-tree.api").tree.open()
+  end,
+})
