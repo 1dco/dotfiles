@@ -33,9 +33,9 @@
 
 # files
 
-windows : C:/Users/Username/.config/wezterm
-Linux : ~/.config/
-MacOS : ~/.config/
+- windows : C:/Users/Username/.config/wezterm
+- Linux : ~/.config/
+- MacOS : ~/.config/
 
 ## Hyprland
 
@@ -70,4 +70,7 @@ Standard Shortcut
 - Ctrl-w k — Move up
 - Ctrl-w w — Cycle through all open panes (splits)
 - Ctrl-w p — Switch to the previous pane
-
+- Ctrl-p, Up, Select the autocomplete up
+- Ctrl-n, Down, Select the autocomplete down
+- Ctrl-e, Ignore the autocomplete
+- Ctrl-y, Accept the autocomplete
