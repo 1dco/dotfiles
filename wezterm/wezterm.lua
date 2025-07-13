@@ -41,6 +41,11 @@ if target:find("windows") then
   }
 elseif target:find("apple") then
   config.font_size = 16
+  config.window_frame = {
+    font = wezterm.font { family = 'Roboto', weight = 'Bold' }, -- Optional: customize font family/weight
+    -- font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
+    font_size = 16.0, -- Set your desired tab bar font size here
+  }
 elseif target:find("linux") then
   config.font_size = 14
   config.enable_wayland = false
