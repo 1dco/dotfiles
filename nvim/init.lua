@@ -27,6 +27,17 @@ vim.cmd([[
   augroup END
 ]])
 
+-- Add keymap to nvim, so that the Home and End behave like standard vi/vim
+vim.keymap.set({'n', 'v'}, '<Home>', '^')
+vim.keymap.set({'n', 'v'}, '<End>', '$')
+vim.keymap.set({'n', 'v'}, '<Find>', '^')
+vim.keymap.set({'n', 'v'}, '<Select>', '$')
+
+vim.keymap.set('i', '<Home>', '<C-o>^')
+vim.keymap.set('i', '<End>', '<C-o>$')
+vim.keymap.set('i', '<Find>', '<C-o>^')
+vim.keymap.set('i', '<Select>', '<C-o>$')
+
 --vim.api.nvim_create_autocmd("VimEnter", {
 --  callback = function()
 --    vim.cmd("Neotree show")
