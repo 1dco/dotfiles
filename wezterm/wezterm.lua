@@ -17,13 +17,13 @@ config.color_scheme = "Wez"
 -- config.color_scheme = 'Tango'
 config.window_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
 config.text_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
---config.font = wezterm.font("CaskaydiaCove Nerd Font")
-config.use_fancy_tab_bar = false
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font")
+config.use_fancy_tab_bar = true
 
 config.window_frame = {
   font = wezterm.font { family = 'Roboto', weight = 'Bold' }, -- Optional: customize font family/weight
   -- font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
-  font_size = 15.0, -- Set your desired tab bar font size here
+  font_size = 14.0, -- Set your desired tab bar font size here
 }
 
 -- Detect the OS using wezterm.target_triple
