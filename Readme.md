@@ -6,6 +6,8 @@
   - https://www.josean.com/posts/7-amazing-cli-tools
 - [@woioeow] for the hyprland shortcut and configuration and wallpaper [@woioeow](https://github.com/woioeow)
   - https://github.com/woioeow/hyprland-dotfiles/
+- [@JarkDerksen] for his tmux configuration [@JackDerksen](https://github.com/JackDerksen/)
+  - [tmux.config](https://github.com/JackDerksen/tmux/blob/main/tmux.conf)
 
 ## Requirement
 
