@@ -133,7 +133,9 @@ LIBGUESTFS_TRACE=1
 alias cat='bat --wrap never --paging never'
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-alias ls="eza --oneline --git --group --color=always --icons=always"
+#alias ls="eza --oneline --git --group --color=always --icons=always"
+alias ls='lsd -F --oneline'
+alias ll='lsd -lAF'
 alias cd=z
 
 if [[ $TERM == "screen"* || $TERM == "tmux"* || $TERM == "xterm"* ]]; then
