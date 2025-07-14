@@ -22,8 +22,8 @@
 - batcat
 - xclip
 - neovim
-- thef*ck
-- tldr
+- pay-respects (faster) / thef*ck (slow)
+- tealdeer (rust, faster) / tldr (slow)
 - git-delta
 - neovim
 - waybar ( hyprland only )
