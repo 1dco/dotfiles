@@ -31,7 +31,7 @@ local target = wezterm.target_triple
 
 if target:find("windows") then
   -- Windows: Launch WSL with your desired options
-  config.font_size = 13
+  config.font_size = 14
   config.default_prog = {
     "C:\\WINDOWS\\system32\\wsl.exe",
     "--distribution",
