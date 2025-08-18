@@ -12,7 +12,7 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 -- config.font_size = 12
--- config.color_scheme = 'Tartan'
+--config.color_scheme = 'Tartan'
 config.color_scheme = "Wez"
 -- config.color_scheme = 'Tango'
 config.window_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
@@ -26,12 +26,29 @@ config.window_frame = {
   font_size = 14.0, -- Set your desired tab bar font size here
 }
 
+-- enable mouse paste
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = "Right" } },
+		mods = "NONE",
+		action = wezterm.action_callback(function(window, pane)
+			local has_selection = window:get_selection_text_for_pane(pane) ~= ""
+			if has_selection then
+				window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
+				window:perform_action(act.ClearSelection, pane)
+			else
+				window:perform_action(act({ PasteFrom = "Clipboard" }), pane)
+			end
+		end),
+	},
+}
+
 -- Detect the OS using wezterm.target_triple
 local target = wezterm.target_triple
 
 if target:find("windows") then
   -- Windows: Launch WSL with your desired options
-  config.font_size = 14
+  config.font_size = 12
   config.default_prog = {
     "C:\\WINDOWS\\system32\\wsl.exe",
     "--distribution",
