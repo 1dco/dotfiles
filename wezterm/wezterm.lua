@@ -10,6 +10,9 @@ local act = wezterm.action
 config.initial_cols = 120
 config.initial_rows = 28
 
+-- Problem for pasting new line inside kubectl will be resolved here
+config.canonicalize_pasted_newlines = "None"
+
 -- or, changing the font size and color scheme.
 -- config.font_size = 12
 --config.color_scheme = 'Tartan'
@@ -48,7 +51,7 @@ local target = wezterm.target_triple
 
 if target:find("windows") then
   -- Windows: Launch WSL with your desired options
-  config.font_size = 12
+  config.font_size = 13
   config.default_prog = {
     "C:\\WINDOWS\\system32\\wsl.exe",
     "--distribution",
