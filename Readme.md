@@ -9,6 +9,21 @@
 - [@JarkDerksen] for his tmux configuration [@JackDerksen](https://github.com/JackDerksen/)
   - [tmux.config](https://github.com/JackDerksen/tmux/blob/main/tmux.conf)
 
+## Unifying My Workflow: The Ultimate Cross-Platform Terminal Setup with WezTerm, Powerlevel10k, Neovim, Tmux
+
+Navigating between macOS, Windows, and Linux at home or in the office, can present unique challenges when trying to maintain a consistent and efficient workflow.
+
+After extensive selection, I discovered wezterm excels in both compatibility and productivity.
+
+## Why I Chose WezTerm as My Terminal
+
+Cross-platform support is essential for developers who shift between different operating systems. While evaluating several popular terminals, three stood out:
+•	WezTerm: Reliable, feature-rich, and supports Windows, macOS, and Linux seamlessly.
+•	Kitty: Excellent performance, but support is restricted to Linux.
+•	Ghostty: Fast and lightweight, available for Linux and macOS only.
+
+WezTerm emerged as my preferred choice due to its robust feature set, active development, and the support for all OSes.
+
 ## Requirement
 
 - kitty / wezterm (linux hyprland/plasma work best with kitty, wezterm for windows, mac, linux plasma with wayland disabled, cosmic work out of the box)
