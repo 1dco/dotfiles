@@ -18,8 +18,10 @@ config.canonicalize_pasted_newlines = "None"
 --config.color_scheme = 'Tartan'
 config.color_scheme = "Wez"
 -- config.color_scheme = 'Tango'
-config.window_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
-config.text_background_opacity = 0.85 -- 0.0 is fully transparent, 1.0 is fully opaque
+config.window_background_opacity = 1.00 -- 0.0 is fully transparent, 1.0 is fully opaque
+config.text_background_opacity = 1.00 -- 0.0 is fully transparent, 1.0 is fully opaque
+--config.window_background_opacity = 0.95 -- 0.0 is fully transparent, 1.0 is fully opaque
+--config.text_background_opacity = 0.95 -- 0.0 is fully transparent, 1.0 is fully opaque
 --config.font = wezterm.font("CaskaydiaCove Nerd Font")
 --config.font = wezterm.font("Inconsolata Nerd Font")
 --config.font = wezterm.font("JetBrainMono NF")
@@ -65,6 +67,13 @@ if target:find("windows") then
     "archLinux",
     "--cd",
     "~",
+  }
+  config.window_background_image = "C:\\Wallpaper\\wall0.png"
+  config.window_background_image_hsb = {
+    -- Darken the background image by reducing it to 1/3rd
+  brightness = 0.1,
+  hue = 1.0,
+  saturation = 1.0,
   }
 elseif target:find("apple") then
   config.font_size = 16
