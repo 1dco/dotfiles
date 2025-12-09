@@ -35,7 +35,7 @@ config.window_frame = {
   font = wezterm.font { family = 'RobotoMono Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
   --font = wezterm.font { family = 'Inconsolata Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
   -- font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
-  font_size = 16.0, -- Set your desired tab bar font size here
+  font_size = 12.0, -- Set your desired tab bar font size here
 }
 
 -- enable mouse paste
@@ -60,7 +60,7 @@ local target = wezterm.target_triple
 
 if target:find("windows") then
   -- Windows: Launch WSL with your desired options
-  config.font_size = 13
+  config.font_size = 12
   config.default_prog = {
     "C:\\WINDOWS\\system32\\wsl.exe",
     "--distribution",
@@ -71,7 +71,7 @@ if target:find("windows") then
   config.window_background_image = "C:\\Wallpaper\\wall0.png"
   config.window_background_image_hsb = {
     -- Darken the background image by reducing it to 1/3rd
-  brightness = 0.1,
+  brightness = 0.03,
   hue = 1.0,
   saturation = 1.0,
   }
