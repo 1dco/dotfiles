@@ -67,6 +67,9 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - Ctrl + Alt + Shift + 4 => Split Horizontal (kitty & wezterm) => due to deadkeys keyboard
 - Ctrl + Shift + PageUp/PageDown => Scroll Up & Down
 - Ctrl + Shift + w => Close Pane
+- Ctrl + Shift + Space => Quick Select
+- Ctrl + Shift + F => Search
+- Ctrl + Shift + P => activate command palette
 
 ## Shortcut in neovim
 
