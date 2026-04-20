@@ -49,6 +49,7 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - sddm (linux only)
 - hyprpaper, hypridle (hyprland only)
 - fd
+- librewolf (changed from firefox)
 
 ## files
 
