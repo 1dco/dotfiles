@@ -29,7 +29,6 @@ config.text_background_opacity = 1.00 -- 0.0 is fully transparent, 1.0 is fully 
 --config.font = wezterm.font("Agave Nerd Font")
 --config.font = wezterm.font("EnvyCodeR Nerd Font")
 --config.font = wezterm.font("FiraCode Nerd Font")
-config.use_fancy_tab_bar = true
 
 config.window_frame = {
   font = wezterm.font { family = 'RobotoMono Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
@@ -71,10 +70,11 @@ if target:find("windows") then
   config.window_background_image = "C:\\Wallpaper\\wall0.png"
   config.window_background_image_hsb = {
     -- Darken the background image by reducing it to 1/3rd
-  brightness = 0.03,
-  hue = 1.0,
-  saturation = 1.0,
+    brightness = 0.03,
+    hue = 1.0,
+    saturation = 1.0,
   }
+  config.use_fancy_tab_bar = true
 elseif target:find("apple") then
   config.font_size = 16
   config.window_frame = {
@@ -85,6 +85,7 @@ elseif target:find("apple") then
 elseif target:find("linux") then
   config.font_size = 14
   config.enable_wayland = false
+  config.use_fancy_tab_bar = false
 end
 
 config.scrollback_lines = 10000
