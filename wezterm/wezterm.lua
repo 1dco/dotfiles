@@ -74,7 +74,9 @@ if target:find("windows") then
     hue = 1.0,
     saturation = 1.0,
   }
-  config.use_fancy_tab_bar = true
+  config.use_fancy_tab_bar = false
+  config.tab_bar_at_bottom = false
+  config.hide_tab_bar_if_only_one_tab = false
 elseif target:find("apple") then
   config.font_size = 16
   config.window_frame = {
