@@ -50,6 +50,7 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - hyprpaper, hypridle (hyprland only)
 - fd
 - librewolf (changed from firefox)
+- snappy-switch ( install using paru -S snappy-switcher)
 
 ## files
 
