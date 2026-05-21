@@ -17,7 +17,12 @@ config.canonicalize_pasted_newlines = "None"
 -- config.font_size = 12
 --config.color_scheme = 'Tartan'
 config.color_scheme = "Wez"
+--config.color_scheme = "Gruvbox Light"
+--config.color_scheme = "Gruvbox Light"
 -- config.color_scheme = 'Tango'
+--config.colors = {
+--    background = "#f6f0d9", -- warm yellow base
+--}
 config.window_background_opacity = 1.00 -- 0.0 is fully transparent, 1.0 is fully opaque
 config.text_background_opacity = 1.00 -- 0.0 is fully transparent, 1.0 is fully opaque
 --config.window_background_opacity = 0.95 -- 0.0 is fully transparent, 1.0 is fully opaque
@@ -70,7 +75,7 @@ if target:find("windows") then
   config.window_background_image = "C:\\Wallpaper\\wall0.png"
   config.window_background_image_hsb = {
     -- Darken the background image by reducing it to 1/3rd
-    brightness = 0.03,
+    brightness = 0.02,
     hue = 1.0,
     saturation = 1.0,
   }
@@ -156,6 +161,21 @@ config.keys = {
     key = "$",
     mods = "CTRL|ALT|SHIFT",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
+  { key = '8', mods = 'CTRL', action = act.PaneSelect },
+  {
+    key = '9',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      alphabet = '1234567890',
+    },
+  },
+  {
+    key = '0',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      mode = 'SwapWithActive',
+    },
   },
 }
 
