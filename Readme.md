@@ -72,6 +72,9 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - Ctrl + Shift + Space => Quick Select
 - Ctrl + Shift + F => Search
 - Ctrl + Shift + P => activate command palette
+- Ctrl + 8 => Activate Select Pane (a,s,d)
+- Ctrl + 9 => Activate Select pane (1,2,3)
+- Ctrl + 0 => Swap with active Pane
 
 ## Shortcut in neovim
 
