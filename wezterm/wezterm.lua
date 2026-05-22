@@ -175,6 +175,7 @@ config.keys = {
     mods = 'CTRL',
     action = act.PaneSelect {
       mode = 'SwapWithActive',
+      alphabet = '1234567890',
     },
   },
 }
