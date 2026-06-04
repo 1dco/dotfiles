@@ -22,4 +22,4 @@
   email = 73421098+1dco@users.noreply.github.com
   name = DJay
 [credential]
-	helper = /usr/bin/gnome-keyring
+	helper = /usr/share/git/credential/libsecret/git-credential-libsecret
