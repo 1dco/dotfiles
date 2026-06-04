@@ -51,6 +51,7 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - fd
 - librewolf (changed from firefox)
 - snappy-switch ( install using paru -S snappy-switcher)
+- libsecret
 
 ## files
 
@@ -101,3 +102,21 @@ Standard Shortcut
 - Ctrl-n, Down, Select the autocomplete down
 - Ctrl-e, Ignore the autocomplete
 - Ctrl-y, Accept the autocomplete
+
+## Installing libsecret
+
+```
+sudo pacman -S libsecret
+```
+
+
+```
+sudo make --directory=/usr/share/git/credential/libsecret
+```
+
+
+```
+git config --global credential.helper /usr/share/git/libsecret/git-credential-libsecret
+```
+```
+```
