@@ -84,6 +84,13 @@ if target:find("windows") then
   config.hide_tab_bar_if_only_one_tab = false
 elseif target:find("apple") then
   config.font_size = 16
+  config.window_background_image = string.format("%s/.config/wallpaper/wall0.png", wezterm.home_dir)
+  config.window_background_image_hsb = {
+    -- Darken the background image by reducing it to 1/3rd
+    brightness = 0.02,
+    hue = 1.0,
+    saturation = 1.0,
+  }
   config.window_frame = {
     font = wezterm.font { family = 'Roboto', weight = 'Bold' }, -- Optional: customize font family/weight
     -- font = wezterm.font { family = 'CaskaydiaCove Nerd Font', weight = 'Bold' }, -- Optional: customize font family/weight
@@ -93,6 +100,14 @@ elseif target:find("linux") then
   config.font_size = 14
   config.enable_wayland = false
   config.use_fancy_tab_bar = false
+  config.window_decorations = "TITLE | RESIZE"
+  config.window_background_image = string.format("%s/.config/wallpaper/wall0.png", wezterm.home_dir)
+  config.window_background_image_hsb = {
+    -- Darken the background image by reducing it to 1/3rd
+    brightness = 0.02,
+    hue = 1.0,
+    saturation = 1.0,
+  }
 end
 
 config.scrollback_lines = 10000
