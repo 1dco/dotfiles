@@ -52,6 +52,7 @@ WezTerm emerged as my preferred choice due to its robust feature set, active dev
 - librewolf (changed from firefox)
 - snappy-switch ( install using paru -S snappy-switcher)
 - libsecret
+- `pacman -S ttf-roboto-mono-nerd`
 
 ## files
 
