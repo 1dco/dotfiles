@@ -75,7 +75,7 @@ if target:find("windows") then
   config.window_background_image = "C:\\Wallpaper\\wall0.png"
   config.window_background_image_hsb = {
     -- Darken the background image by reducing it to 1/3rd
-    brightness = 0.02,
+    brightness = 0.015,
     hue = 1.0,
     saturation = 1.0,
   }
